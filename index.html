@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EEST N1 Ntra. Sra. del Valle</title>
+    <title>Página Interactiva</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="eestlogo.png" alt="Logo">
-        </div>
-        <h1>E.E.S.T No. 1</h1>
-        <div class="user-icon">
-            <img src="user-placeholder.png" alt="Usuario">
-        </div>
-    </header>
 
-    <section id="content">
-        <div class="text-box">
-            <p>¿Qué se ve en informática?</p>
-        </div>
+    <!-- Ícono "+" interactuable -->
+    <div class="menu-toggle" onclick="toggleMenu()">+</div>
 
-        <div class="image-box">
-            <p>Imágenes de los temas</p>
-        </div>
-    </section>
+    <!-- Menú lateral -->
+    <div id="sideMenu" class="side-menu">
+        <ul>
+            <li onclick="changeContent('4to año')">4to año</li>
+            <li onclick="changeContent('5to año')">5to año</li>
+            <li onclick="changeContent('6to año')">6to año</li>
+            <li onclick="changeContent('7mo año')">7mo año</li>
+            <li onclick="changeContent('Kit básico')">Kit básico</li>
+            <li onclick="changeContent('Créditos')">Créditos</li>
+        </ul>
+    </div>
 
-    <footer>
-        <p>© 2024 LOSINFORMATICOS. En informatica hacemos esto ¿y en electro? 😛</p>
-    </footer>
+    <!-- Contenedor central del slide -->
+    <div class="container">
+        <h1>INFORMATICA TECNICA</h1>
+        <div class="slider">
+            <button class="arrow left" onclick="changeSlide(-1)">&#9664;</button>
+            <div class="slide-content">
+                <img id="slideImage" src="img1.jpg" alt="Imagen 1">
+                <p id="slideText">Texto 1</p>
+            </div>
+            <button class="arrow right" onclick="changeSlide(1)">&#9654;</button>
+        </div>
+        <p>E.E.S.T Nstra Señora del Valle</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
