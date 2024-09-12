@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+<<<<<<< Updated upstream
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EEST N1 Ntra. Sra. del Valle</title>
@@ -31,7 +32,48 @@
     <footer>
         <p>© 2024 LOSINFORMATICOS. En informatica hacemos esto ¿y en electro? 😛</p>
     </footer>
+=======
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8, que es compatible con la mayoría de los caracteres y lenguajes. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la escala inicial de la página para que sea adaptable a diferentes tamaños de pantalla, como en dispositivos móviles. -->
+    <title>Página Interactiva</title> <!-- Establece el título de la página que aparecerá en la pestaña del navegador. -->
+    <link rel="stylesheet" href="styles.css"> <!-- Vincula la hoja de estilos CSS externa llamada "styles.css" para dar formato a la página. -->
+</head>
+<body>
+    <!-- Menú desplegable -->
+    <div id="menu" class="menu-closed"> <!-- Contenedor del menú desplegable, inicialmente cerrado, con ID "menu" y clase "menu-closed". -->
+        <ul> <!-- Lista no ordenada para los elementos del menú. -->
+            <li><a href="index.html">Menú</a></li> <!-- Enlace al archivo "index.html" con el texto "Menú". -->
+            <li><a href="cuarto.html">4to año</a></li> <!-- Enlace al archivo "cuarto.html" con el texto "4to año". -->
+            <li><a href="quinto.html">5to año</a></li> <!-- Enlace al archivo "quinto.html" con el texto "5to año". -->
+            <li><a href="sexto.html">6to año</a></li> <!-- Enlace al archivo "sexto.html" con el texto "6to año". -->
+            <li><a href="septimo.html">7mo año</a></li> <!-- Enlace al archivo "septimo.html" con el texto "7mo año". -->
+            <li><a href="kit.html">Kit básico</a></li> <!-- Enlace al archivo "kit.html" con el texto "Kit básico". -->
+            <li><a href="creditos.html">Créditos</a></li> <!-- Enlace al archivo "creditos.html" con el texto "Créditos". -->
+        </ul>
+    </div>
 
-    <script src="script.js"></script>
+    <!-- Círculo detrás del signo "+" -->
+    <div class="circle"></div> <!-- Div que representa un círculo decorativo detrás del botón del menú. Utiliza la clase "circle" para darle estilo. -->
+
+    <!-- Botón para abrir/cerrar menú -->
+    <div class="menu-toggle" id="menuToggle">+</div> <!-- Botón con el signo "+" que abre o cierra el menú. Tiene ID "menuToggle" para su manipulación en JavaScript. -->
+
+    <!-- Contenido principal con el slider -->
+    <div class="container"> <!-- Contenedor principal de la página con la clase "container". -->
+        <h1>INFORMATICA TECNICA</h1> <!-- Título principal de la página. -->
+        <div id="slider"> <!-- Contenedor del slider con ID "slider". -->
+            <div class="slide" id="slide-content"> <!-- Contenedor de una diapositiva del slider, con la clase "slide" y el ID "slide-content". -->
+                <h2>Imagen 1</h2> <!-- Título de la primera imagen en el slider. -->
+                <img src="1eest_n_1.jpg" alt="Imagen 1"> <!-- Imagen que se muestra en la primera diapositiva del slider, con el archivo "1eest_n_1.jpg" y texto alternativo "Imagen 1". -->
+                <p>Texto 1</p> <!-- Descripción o texto relacionado con la primera imagen del slider. -->
+            </div>
+            <button id="prev" class="nav-btn">&lt;</button> <!-- Botón de navegación para ir a la diapositiva anterior, identificado con ID "prev". -->
+            <button id="next" class="nav-btn">&gt;</button> <!-- Botón de navegación para ir a la diapositiva siguiente, identificado con ID "next". -->
+        </div>
+        <p>E.E.S.T Nstra Señora del Valle</p> <!-- Párrafo de texto que muestra el nombre de la institución. -->
+    </div>
+>>>>>>> Stashed changes
+
+    <script src="script.js"></script> <!-- Incluye el archivo de JavaScript externo "script.js" para agregar interactividad a la página. -->
 </body>
 </html>
