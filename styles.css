@@ -127,5 +127,5 @@
 
 /* Animación para convertir "+" en "x" */
 .rotate {
-    transform: rotate(45deg); /* Gira el botón del menú 45 grados para convertir el "+" en una "x". */
+    transform: rotate(180deg); /* Gira el botón del menú 45 grados para convertir el "+" en una "x". */
 }
