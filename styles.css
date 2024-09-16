@@ -1,10 +1,11 @@
 /* Estilos para el menú desplegable */
 .menu-toggle {
+    user-select: none;
     position: absolute; /* Posiciona el botón en relación al contenedor más cercano con posición relativa o absoluta. */
     top: 20px; /* Define la distancia del botón respecto a la parte superior del contenedor. */
     left: 20px; /* Define la distancia del botón respecto al lado izquierdo del contenedor. */
     font-size: 30px; /* Ajusta el tamaño de la fuente del botón, haciéndolo más grande. */
-    cursor: pointer; /* Cambia el cursor a una mano cuando el usuario pasa sobre el botón. */
+    cursor: grabbing; /* Cambia el cursor a una mano cuando el usuario pasa sobre el botón. */
     transition: transform 0.5s ease; /* Agrega una transición suave cuando el botón gira o cambia de forma. */
     z-index: 1000; /* Asegura que el botón esté en el frente de otros elementos en la página. */
 }
@@ -26,6 +27,7 @@
 }
 
 .menu-open {
+    user-select: none;
     display: block; /* Muestra el menú cuando está en estado abierto. */
     position: absolute; /* Posiciona el menú en relación al contenedor más cercano con posición relativa o absoluta. */
     left: 0; /* Ubica el menú en el borde izquierdo de la pantalla. */
@@ -35,7 +37,7 @@
     height: 100%; /* Hace que el menú ocupe toda la altura de la pantalla. */
     padding: 20px; /* Agrega un espacio interior alrededor del contenido del menú. */
     z-index: 1000; /* Asegura que el menú esté en el frente de otros elementos. */
-    animation: slideIn 0.5s ease forwards; /* Aplica una animación de deslizamiento cuando el menú se abre. */
+    animation: slideIn 0.6s ease forwards; /* Aplica una animación de deslizamiento cuando el menú se abre. */
 }
 
 /* Separar el menú del "+" */
