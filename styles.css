@@ -1,82 +1,131 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.slider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.slide-content {
-    width: 300px;
-    height: 200px;
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.slide-content img {
-    width: 100%;
-    height: 150px;
-}
-
-.arrow {
-    font-size: 30px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
+/* Estilos para el menú desplegable */
 .menu-toggle {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
+    position: absolute; /* Posiciona el botón en relación al contenedor más cercano con posición relativa o absoluta. */
+    top: 20px; /* Define la distancia del botón respecto a la parte superior del contenedor. */
+    left: 20px; /* Define la distancia del botón respecto al lado izquierdo del contenedor. */
+    font-size: 30px; /* Ajusta el tamaño de la fuente del botón, haciéndolo más grande. */
+    cursor: pointer; /* Cambia el cursor a una mano cuando el usuario pasa sobre el botón. */
+    transition: transform 0.5s ease; /* Agrega una transición suave cuando el botón gira o cambia de forma. */
+    z-index: 1000; /* Asegura que el botón esté en el frente de otros elementos en la página. */
 }
 
-.side-menu {
-    position: fixed;
-    left: -200px;
-    top: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #333;
-    color: white;
-    padding-top: 60px;
-    transition: 0.3s;
+/* Círculo detrás del "+" */
+.circle {
+    position: absolute; /* Posiciona el círculo en relación al contenedor más cercano con posición relativa o absoluta. */
+    top: 21px; /* Ubica el círculo ligeramente más alto que el botón del menú. */
+    left: 13px; /* Ubica el círculo ligeramente a la izquierda del botón del menú. */
+    width: 30px; /* Define el ancho del círculo. */
+    height: 30px; /* Define la altura del círculo. */
+    background-color: #a7a7a7; /* Establece el color de fondo del círculo. */
+    border-radius: 50%; /* Hace que el div tenga una forma circular. */
+    z-index: 999; /* Coloca el círculo detrás del botón del menú, pero delante de otros elementos de menor índice. */
 }
 
-.side-menu ul {
-    list-style: none;
-    padding: 0;
+.menu-closed {
+    display: none; /* Oculta el menú cuando está en estado cerrado. */
 }
 
-.side-menu ul li {
-    padding: 15px;
-    text-align: left;
-    cursor: pointer;
-    background-color: #444;
-    margin: 5px 0;
+.menu-open {
+    display: block; /* Muestra el menú cuando está en estado abierto. */
+    position: absolute; /* Posiciona el menú en relación al contenedor más cercano con posición relativa o absoluta. */
+    left: 0; /* Ubica el menú en el borde izquierdo de la pantalla. */
+    top: 0; /* Ubica el menú en la parte superior de la pantalla. */
+    background-color: #333; /* Establece un color de fondo oscuro para el menú. */
+    width: 200px; /* Define el ancho del menú desplegable. */
+    height: 100%; /* Hace que el menú ocupe toda la altura de la pantalla. */
+    padding: 20px; /* Agrega un espacio interior alrededor del contenido del menú. */
+    z-index: 1000; /* Asegura que el menú esté en el frente de otros elementos. */
+    animation: slideIn 0.5s ease forwards; /* Aplica una animación de deslizamiento cuando el menú se abre. */
 }
 
-.side-menu ul li:hover {
-    background-color: #555;
+/* Separar el menú del "+" */
+.menu-open ul {
+    list-style-type: none; /* Elimina los puntos de la lista. */
+    padding: 50px 0 0 0; /* Ajusta el padding para separar la lista del botón del menú. */
 }
 
-.side-menu ul li:active {
-    background-color: #666;
+.menu-open ul li {
+    margin: 20px 0; /* Añade un margen vertical entre cada elemento de la lista. */
+    background-color: #444; /* Establece un color de fondo ligeramente más claro para cada elemento de la lista. */
+    padding: 10px; /* Agrega espacio interior alrededor del texto en cada elemento de la lista. */
+    border-radius: 5px; /* Redondea ligeramente las esquinas de cada elemento de la lista. */
+}
+
+.menu-open ul li a {
+    color: white; /* Establece el color del texto de los enlaces a blanco. */
+    text-decoration: none; /* Elimina el subrayado de los enlaces. */
+    font-size: 18px; /* Ajusta el tamaño de la fuente de los enlaces. */
+    display: block; /* Hace que los enlaces ocupen toda la anchura de sus elementos de lista. */
+}
+
+.menu-open ul li a:hover {
+    text-decoration: underline; /* Subraya el enlace cuando el usuario pasa sobre él. */
+}
+
+/* Animación para la apertura del menú */
+@keyframes slideIn {
+    from {
+        width: 0; /* Define el ancho inicial del menú como 0. */
+    }
+    to {
+        width: 200px; /* Expande el ancho del menú a 200px durante la animación. */
+    }
+}
+
+/* Estilo para el slider */
+.container {
+    text-align: center; /* Centra el texto dentro del contenedor. */
+    position: relative; /* Permite que los elementos posicionados absolutamente dentro del contenedor se coloquen en relación a él. */
+}
+
+#slider {
+    width: 80%; /* El slider ocupa el 80% del ancho disponible. */
+    height: 500px; /* Define la altura del slider en 500px. */
+    margin: auto; /* Centra el slider horizontalmente dentro de su contenedor. */
+    position: relative; /* Permite que los elementos posicionados absolutamente dentro del slider se coloquen en relación a él. */
+    overflow: hidden; /* Oculta cualquier contenido que se salga del área del slider. */
+    border: 2px solid black; /* Añade un borde negro de 2px alrededor del slider. */
+    z-index: 1; /* Coloca el slider por encima de algunos otros elementos. */
+}
+
+#slider img {
+    width: 50%; /* La imagen dentro del slider ocupa el 50% de su contenedor. */
+    margin: 0 auto; /* Centra la imagen horizontalmente dentro del slider. */
+    display: block; /* Hace que la imagen se comporte como un bloque, ocupando toda la anchura disponible. */
+    height: auto; /* Mantiene la proporción original de la imagen. */
+}
+
+#slide-content {
+    display: flex; /* Aplica un diseño flexible al contenido del slider. */
+    flex-direction: column; /* Organiza los elementos del slider en una columna. */
+    align-items: center; /* Centra horizontalmente los elementos hijos dentro del slider. */
+    justify-content: center; /* Centra verticalmente los elementos hijos dentro del slider. */
+}
+
+#slider h2, #slider p {
+    margin: 10px 0; /* Añade un margen vertical de 10px alrededor de los títulos y párrafos en el slider. */
+}
+
+.nav-btn {
+    position: absolute; /* Posiciona los botones de navegación en relación al contenedor del slider. */
+    top: 50%; /* Centra verticalmente los botones de navegación dentro del slider. */
+    transform: translateY(-50%); /* Ajusta la posición de los botones para que queden perfectamente centrados verticalmente. */
+    background-color: transparent; /* Hace que el fondo de los botones de navegación sea transparente. */
+    border: none; /* Elimina cualquier borde alrededor de los botones de navegación. */
+    font-size: 30px; /* Define un tamaño de fuente grande para los botones de navegación. */
+    cursor: pointer; /* Cambia el cursor a una mano cuando el usuario pasa sobre los botones de navegación. */
+    z-index: 1; /* Coloca los botones de navegación por encima de otros elementos dentro del slider. */
+}
+
+#prev {
+    left: 10px; /* Posiciona el botón de navegación anterior en la parte izquierda del slider. */
+}
+
+#next {
+    right: 10px; /* Posiciona el botón de navegación siguiente en la parte derecha del slider. */
+}
+
+/* Animación para convertir "+" en "x" */
+.rotate {
+    transform: rotate(45deg); /* Gira el botón del menú 45 grados para convertir el "+" en una "x". */
 }

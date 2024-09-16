@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Interactiva</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8, que es compatible con la mayoría de los caracteres y lenguajes. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la escala inicial de la página para que sea adaptable a diferentes tamaños de pantalla, como en dispositivos móviles. -->
+    <title>Página Interactiva</title> <!-- Establece el título de la página que aparecerá en la pestaña del navegador. -->
+    <link rel="stylesheet" href="styles.css"> <!-- Vincula la hoja de estilos CSS externa llamada "styles.css" para dar formato a la página. -->
 </head>
 <body>
-
-    <!-- Ícono "+" interactuable -->
-    <div class="menu-toggle" onclick="toggleMenu()">+</div>
-
-    <!-- Menú lateral -->
-    <div id="sideMenu" class="side-menu">
-        <ul>
-            <li onclick="changeContent('4to año')">4to año</li>
-            <li onclick="changeContent('5to año')">5to año</li>
-            <li onclick="changeContent('6to año')">6to año</li>
-            <li onclick="changeContent('7mo año')">7mo año</li>
-            <li onclick="changeContent('Kit básico')">Kit básico</li>
-            <li onclick="changeContent('Créditos')">Créditos</li>
+    <!-- Menú desplegable -->
+    <div id="menu" class="menu-closed"> <!-- Contenedor del menú desplegable, inicialmente cerrado, con ID "menu" y clase "menu-closed". -->
+        <ul> <!-- Lista no ordenada para los elementos del menú. -->
+            <li><a href="index.html">Menú</a></li> <!-- Enlace al archivo "index.html" con el texto "Menú". -->
+            <li><a href="cuarto.html">4to año</a></li> <!-- Enlace al archivo "cuarto.html" con el texto "4to año". -->
+            <li><a href="quinto.html">5to año</a></li> <!-- Enlace al archivo "quinto.html" con el texto "5to año". -->
+            <li><a href="sexto.html">6to año</a></li> <!-- Enlace al archivo "sexto.html" con el texto "6to año". -->
+            <li><a href="septimo.html">7mo año</a></li> <!-- Enlace al archivo "septimo.html" con el texto "7mo año". -->
+            <li><a href="kit.html">Kit básico</a></li> <!-- Enlace al archivo "kit.html" con el texto "Kit básico". -->
+            <li><a href="creditos.html">Créditos</a></li> <!-- Enlace al archivo "creditos.html" con el texto "Créditos". -->
         </ul>
     </div>
 
-    <!-- Contenedor central del slide -->
-    <div class="container">
-        <h1>INFORMATICA TECNICA</h1>
-        <div class="slider">
-            <button class="arrow left" onclick="changeSlide(-1)">&#9664;</button>
-            <div class="slide-content">
-                <img id="slideImage" src="img1.jpg" alt="Imagen 1">
-                <p id="slideText">Texto 1</p>
+    <!-- Círculo detrás del signo "+" -->
+    <div class="circle"></div> <!-- Div que representa un círculo decorativo detrás del botón del menú. Utiliza la clase "circle" para darle estilo. -->
+
+    <!-- Botón para abrir/cerrar menú -->
+    <div class="menu-toggle" id="menuToggle">+</div> <!-- Botón con el signo "+" que abre o cierra el menú. Tiene ID "menuToggle" para su manipulación en JavaScript. -->
+
+    <!-- Contenido principal con el slider -->
+    <div class="container"> <!-- Contenedor principal de la página con la clase "container". -->
+        <h1>INFORMATICA TECNICA</h1> <!-- Título principal de la página. -->
+        <div id="slider"> <!-- Contenedor del slider con ID "slider". -->
+            <div class="slide" id="slide-content"> <!-- Contenedor de una diapositiva del slider, con la clase "slide" y el ID "slide-content". -->
+                <h2>Imagen 1</h2> <!-- Título de la primera imagen en el slider. -->
+                <img src="1eest_n_1.jpg" alt="Imagen 1"> <!-- Imagen que se muestra en la primera diapositiva del slider, con el archivo "1eest_n_1.jpg" y texto alternativo "Imagen 1". -->
+                <p>Texto 1</p> <!-- Descripción o texto relacionado con la primera imagen del slider. -->
             </div>
-            <button class="arrow right" onclick="changeSlide(1)">&#9654;</button>
+            <button id="prev" class="nav-btn">&lt;</button> <!-- Botón de navegación para ir a la diapositiva anterior, identificado con ID "prev". -->
+            <button id="next" class="nav-btn">&gt;</button> <!-- Botón de navegación para ir a la diapositiva siguiente, identificado con ID "next". -->
         </div>
-        <p>E.E.S.T Nstra Señora del Valle</p>
+        <p>E.E.S.T Nstra Señora del Valle</p> <!-- Párrafo de texto que muestra el nombre de la institución. -->
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Incluye el archivo de JavaScript externo "script.js" para agregar interactividad a la página. -->
 </body>
 </html>
